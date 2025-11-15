@@ -327,6 +327,23 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
+
+        .timer-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .timer {
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -335,6 +352,9 @@
         <div class="header">
             <h1>图形化一级考试系统</h1>
             <p class="subtitle">请认真填写个人信息并完成所有题目</p>
+        </div>
+        <div class="timer-container">
+            剩余时间: <span class="timer" id="timer">60:00</span>
         </div>
 
         <div class="exam-info">
@@ -636,6 +656,9 @@
 
                 // 滚动到结果区域
                 resultContainer.scrollIntoView({ behavior: 'smooth' });
+
+                // 停止计时器
+                clearInterval(timerInterval);
             }
 
             // 重置考试
@@ -683,7 +706,8 @@
                         score: wrongtitles.length > 0 ? (examData.questions.length * 2 - wrongtitles.length * 2) : examData.questions.length * 2
                     },
                     wrongtitles: wrongtitles,
-                    exportTime: new Date().toLocaleString('zh-CN')
+                    exportTime: new Date().toLocaleString('zh-CN'),
+                    timeUsed: timerElement.textContent
                 };
 
                 const dataStr = JSON.stringify(exportData, null, 2);
@@ -716,6 +740,27 @@
                         console.error('提交错误:', error);
                     });
             }
+
+            // 计时器功能
+            let totalSeconds = 60 * 60; // 60分钟
+            const timerElement = document.getElementById('timer');
+
+            function updateTimer() {
+                const minutes = Math.floor(totalSeconds / 60);
+                const seconds = totalSeconds % 60;
+
+                timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                if (totalSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    alert('考试时间到！系统将自动提交试卷。');
+                    submitExam();
+                } else {
+                    totalSeconds--;
+                }
+            }
+
+            const timerInterval = setInterval(updateTimer, 1000);
         </script>
 </body>
 
