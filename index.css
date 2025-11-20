@@ -1,0 +1,341 @@
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        .student-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin: 20px 10px 0;
+        }
+
+        .info-item label {
+            width: 100px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .info-item input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            flex: 1;
+        }
+
+        .title {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        .title:hover {
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .title-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 18px;
+        }
+
+        .options {
+            margin-left: 20px;
+        }
+
+        .option {
+            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .option:hover {
+            background-color: #edf2f7;
+        }
+
+        .option input {
+            margin-right: 10px;
+            margin-top: 5px;
+            transform: scale(1.2);
+        }
+
+        .option-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .option-content img {
+            max-width: 150px;
+            margin-left: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .title-image {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .title-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px 10px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #reset-btn {
+            background-color: #95a5a6;
+        }
+
+        #reset-btn:hover {
+            background-color: #7f8c8d;
+        }
+
+        #export-btn {
+            background-color: #27ae60;
+            display: none;
+        }
+
+        #export-btn:hover {
+            background-color: #219653;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .correct {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .incorrect {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .score {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .explanation {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .answer-status {
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .correct-answer {
+            color: #28a745;
+        }
+
+        .incorrect-answer {
+            color: #dc3545;
+        }
+
+        .title-result {
+            margin-top: 10px;
+        }
+
+        .title-type {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-left: 10px;
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .单选题-choice {
+            background-color: #007bff;
+        }
+
+        .judge {
+            background-color: #17a2b8;
+        }
+
+        .exam-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .student-info-display {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+
+        .student-info-display p {
+            margin: 5px 0;
+        }
+
+        .wrong-titles-summary {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+        }
+
+        .wrong-titles-summary h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .wrong-title-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: white;
+            border-radius: 4px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .programming-question {
+            background-color: #f0f8ff;
+            border-left: 4px solid #2980b9;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        .programming-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #2980b9;
+        }
+
+        .programming-content {
+            margin-left: 15px;
+        }
+
+        .programming-image {
+            max-width: 100%;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .timer-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .timer {
+            font-size: 20px;
+        }

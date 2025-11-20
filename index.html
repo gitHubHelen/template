@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图形化一级考试系统</title>
+    <!-- rel 定义当前文档与外部资源的关系 -->
+    <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>个人错题集</h1>
+            <p class="subtitle">填写个人信息点击按钮“获取错题”</p>
+        </div>
+        <div class="timer-container">
+            剩余时间: <span class="timer" id="timer">60:00</span>
+        </div>
+
+        <div class="exam-info">
+            <div>试题总数: <span id="total-titles">0</span></div>
+            <div>总分: <span id="total-score">0</span>分</div>
+            <div>考试时间: <span id="total-time">0</span>分钟</div>
+        </div>
+
+        <div class="student-info" style="display: block;">
+            <div class="info-item">
+                <label for="student-name">姓名</label>
+                <input type="text" id="student-name" placeholder="请输入您的姓名">
+            </div>
+            <div class="info-item">
+                <label for="student-id">学号</label>
+                <input type="text" id="student-id" placeholder="请输入您的学号">
+            </div>
+            <div class="info-item">
+                <label for="student-class">班级</label>
+                <input type="text" id="student-class" placeholder="请输入您的班级">
+            </div>
+            <div class="info-item">
+                <button id="get-btn">获取错题</button>
+            </div>
+        </div>
+
+        <div id="titles-container">
+            <!-- 题目将通过JavaScript动态生成 -->
+        </div>
+        <!-- 编程题36 -->
+        <!-- <div class="programming-question" id="q36">
+            <div class="programming-title">36. 宇航员太空漫游</div>
+            <div class="programming-content">
+                <p><strong>1. 准备工作</strong></p>
+                <p>（1）添加背景Nebula；</p>
+                <p>（2）删除默认角色小猫，添加角色宇航员Kiran、星星Star和地球Earth。</p>
+
+                <p><strong>2. 功能实现</strong></p>
+                <p>（1）宇航员、星星和地球的初始位置如下图所示；</p>
+                <img style="max-width: 300px" src="202406图形化一级.files/202406图形化一级6714.png" alt="初始位置"
+                    class="programming-image">
+
+                <p>（2）程序开始，宇航员的初始造型为“kiran-a”，旋转方式设为左右翻转；</p>
+                <p>（3）宇航员水平向右逐渐移到星星位置，然后切换成造型“kiran-d”；</p>
+                <img style="max-width: 300px" src="202406图形化一级.files/202406图形化一级6795.png" alt="小猫说话"
+                    class="programming-image">
+                <img style="max-width: 300px" src="202406图形化一级.files/202406图形化一级6796.png" alt="小猫说话"
+                    class="programming-image">
+                <img style="max-width: 300px" src="202406图形化一级.files/202406图形化一级6798.png" alt="小猫说话"
+                    class="programming-image">
+                <img style="max-width: 300px" src="202406图形化一级.files/202406图形化一级6799.png" alt="小猫说话"
+                    class="programming-image">
+
+                <p>（4）宇航员调整方向，垂直向上逐渐移到地球位置。</p>
+                <img style="max-width: 300px" src="202406图形化一级.files/202406图形化一级6828.png" alt="向右箭头"
+                    class="programming-image">
+                <img style="max-width: 300px" src="202406图形化一级.files/202406图形化一级6829.png" alt="向左箭头"
+                    class="programming-image">
+            </div>
+        </div>  -->
+        <!-- 编程题36 -->
+        <!-- <div class="programming-question" id="q37">
+            <div class="programming-title">37. 舞蹈表演</div>
+            <div class="programming-content">
+                <p><strong>1. 准备工作</strong></p>
+                <p>（1）添加背景：Concert和Spotlight；</p>
+                <p>（2）删除默认角色小猫，添加角色Ballerina；</p>
+                <p>（3）给角色Ballerina添加声音：Dance Space和Cheer。</p>
+
+                <p><strong>2. 功能实现</strong></p>
+                <p>（1）点击绿旗，初始背景为Conert，小女孩出现在舞台中间位置，造型为“ballerina-a”，说“开始表演”2秒；</p>
+                <img style="max-width: 300px" src="202406图形化一级.files/202406图形化一级7325.png" alt="初始位置"
+                    class="programming-image">
+
+                <p>（（2）背景切换为“Spotlight”，播放声音“Dance Space”，小女孩每隔1秒切换一个造型，从第二个造型依次切换到最后一个造型；</p>
+                <img style="max-width: 300px" src="202406图形化一级.files/202406图形化一级7399.png" alt="小猫说话"
+                    class="programming-image"> -->
+
+        <!-- <p>（3）最后，播放声音“Cheer”。</p>
+                <img style="max-width: 300px" src="202406图形化一级.files/202406图形化一级7420.png" alt="向右箭头"
+                    class="programming-image">
+
+            </div> -->
+
+        <div class="controls">
+            <button id="submit-btn">提交试卷</button>
+            <button id="reset-btn">重新答题</button>
+            <button id="export-btn">导出错题</button>
+        </div>
+
+        <div id="result" class="result"></div>
+        <script type="text/javascript" src="./index.js"></script>
+    </div>
+</body>
+
+</html>
