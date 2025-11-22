@@ -54,7 +54,7 @@ function DownloadExam() {
 
 // 计时器功能
 let totalSeconds = 60 * 60; // 60分钟
-const timerInterval = null;
+let timerInterval = null;
 function updateTimer(timerElement) {
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
