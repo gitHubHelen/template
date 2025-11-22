@@ -318,11 +318,6 @@ window.onload = function () {
 
     // 导出错题为JSON文件
     function exportWrongList() {
-        if (wrongtitles.length === 0) {
-            alert('没有错题可以导出！');
-            return;
-        }
-
         // const studentName = document.getElementById('student-name').value.trim();
         const studentId = document.getElementById('student-id').value.trim();
         // const studentClass = document.getElementById('student-class').value.trim();
