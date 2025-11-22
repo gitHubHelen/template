@@ -1,5 +1,9 @@
 function fetchData(studentName, examId) {
-    return fetch(`http://127.0.0.1:3000/api/error-questions/${studentName}/${examId}`)
+    return fetch(`http://121.43.26.102:3000/api/error-questions/${studentName}/${examId}`, {
+  method: 'GET',
+  mode: 'cors',
+  credentials: 'include'
+})
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -20,7 +24,7 @@ function fetchData(studentName, examId) {
 function sendToServer(data) {
     console.log(data, JSON.stringify(data))
     // 在实际应用中，这里应该使用fetch或XMLHttpRequest将数据发送到服务器
-    fetch(`http://127.0.0.1:3000/api/error-questions/`, {
+    fetch(`http://121.43.26.102:3000/api/error-questions/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
