@@ -61,7 +61,6 @@ function updateTimer(timerElement) {
 
     timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
-    console.log(totalSeconds)
     if (totalSeconds <= 0) {
         clearInterval(timerInterval);
         // alert('考试时间到！系统将自动提交试卷。');
@@ -107,7 +106,7 @@ window.onload = function () {
             //计时器
             totalSeconds = examData.length * 60;
             renderQuestions();
-            setInterval(updateTimer.bind(null, timerElement), 1000);
+            timerInterval = setInterval(updateTimer.bind(null, timerElement), 1000);
         }).catch(error => {
             console.log(error)
         })
