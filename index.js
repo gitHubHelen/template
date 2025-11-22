@@ -1,10 +1,6 @@
-const host = 'http://localhost:3000'
+const host = 'http://babiescoding.xyz:3000'
 function fetchData(studentName, examId) {
-    return fetch(`${host}/api/error-questions/${studentName}/${examId}`, {
-        method: 'GET',
-        mode: 'cors',
-        credentials: 'include'
-    })
+    return fetch(`${host}/api/error-questions/${studentName}/${examId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
