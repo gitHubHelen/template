@@ -1,4 +1,4 @@
-const host = 'localhost:3000'
+const host = 'http://localhost:3000'
 function fetchData(studentName, examId) {
     return fetch(`${host}/api/error-questions/${studentName}/${examId}`, {
         method: 'GET',
